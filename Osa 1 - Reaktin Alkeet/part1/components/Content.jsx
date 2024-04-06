@@ -1,23 +1,18 @@
 import React from "react";
 
-    // here we will define the data within the Content component
-    const parts = [
-        { name: 'Fundamentals of React', exercises: 10 },
-        { name: 'Using props to pass data', exercises: 7 },
-        { name: 'State of a component', exercises: 14 },
-    ];
-
-    const Content = () => {
-        return (
-            <div>
-                {parts.map((part, index) => (
-                    <p key={index}>
-                        {part.name}, {part.exercises}
-                    </p>
+const Content = ({ title, parts }) => {
+    return (
+        <div>
+        <h3>{title}</h3>
+            <ul>
+                {parts.map(part => (
+                    <li key={part.name}>
+                        {part.name} - Exercises: {part.exercises}
+                    </li>
                 ))}
-            </div>
-        );
-    }
-
+            </ul>
+        </div>
+    );
+}
 
 export default Content;

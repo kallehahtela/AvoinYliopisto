@@ -1,20 +1,15 @@
 import React from "react";
 
-const overview = 'Overall different parts and exercises of the course'
-const partsTotal = 3
-const exercisesTotal = 31
+const Total = ({ parts }) => {
+    const totalExercises = parts.reduce((sum, part) => sum + part.exercises, 0);
 
-const Total = () => {
+    console.log('total exercises:', totalExercises)
+
     return (
         <div>
-            <h3>
-                {overview}
-            </h3>
-            <p>
-                There is all together {partsTotal} different parts. Exercises sum is {exercisesTotal}.
-            </p>
+            <p>Total number of exercises: {totalExercises}</p>
         </div>
-    )
-}
+    );
+};
 
 export default Total;
